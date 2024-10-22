@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event Listing and Chatbot Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo" class="logo"> <!-- Add your logo here -->
+                <h1>Upcoming Events</h1>
+            </div>
+            <p>Select an event  details or interact with our chatbot for assistance.</p>
+            <a href="about.html" class="about-btn">About Us</a>
+        </header>
+                    
+        <main>
+
+            <!-- Event Listing Section -->
+            <ul id="eventList" class="event-list">
+                <h3>Non-Technical Events</h3>
+    <li class="event-item" 
+        data-title="Art Workshop" 
+        data-description="Join our creative art workshop to explore your artistic side." 
+        data-schedule="Nov 15, 2024, 2:00 PM" 
+        data-venue="Art Hall, Building A" 
+        data-organizer="Creative Arts Club" 
+        data-requirements="Bring your own art supplies" 
+        data-cost="500" 
+        onclick="openEventDetails(this)">
+        Art Workshop
+    </li>
+    <li class="event-item" 
+        data-title="Cooking Masterclass" 
+        data-description="Learn to cook gourmet dishes with expert chefs." 
+        data-schedule="Nov 18, 2024, 4:00 PM" 
+        data-venue="Kitchen Studio, Main Building" 
+        data-organizer="Master Chefs Club" 
+        data-requirements="No prior experience needed" 
+        data-cost="800" 
+        onclick="openEventDetails(this)">
+        Cooking Masterclass
+    </li>
+    <li class="event-item" 
+        data-title="Photography Walk" 
+        data-description="A photography walk through scenic locations." 
+        data-schedule="Nov 20, 2024, 10:00 AM" 
+        data-venue="Central Park" 
+        data-organizer="Photography Club" 
+        data-requirements="Bring your own camera" 
+        data-cost="300" 
+        onclick="openEventDetails(this)">
+        Photography Walk
+    </li>
+    <li class="event-item" 
+        data-title="Yoga Session" 
+        data-description="Relax and rejuvenate with a guided yoga session." 
+        data-schedule="Nov 22, 2024, 6:00 AM" 
+        data-venue="Health Center, Room 101" 
+        data-organizer="Yoga Club" 
+        data-requirements="Yoga mat" 
+        data-cost="100" 
+        onclick="openEventDetails(this)">
+        Yoga Session
+    </li>
+    
+    <h3>Special Events</h3>
+    <li class="event-item" 
+        data-title="Annual Gala Dinner" 
+        data-description="An exclusive gala dinner with networking opportunities." 
+        data-schedule="Dec 5, 2024, 7:00 PM" 
+        data-venue="Grand Hall" 
+        data-organizer="Events Committee" 
+        data-requirements="Formal attire" 
+        data-cost="2500" 
+        onclick="openEventDetails(this)">
+        Annual Gala Dinner
+    </li>
+    <li class="event-item" 
+        data-title="Charity Auction" 
+        data-description="Participate in our charity auction to support a cause." 
+        data-schedule="Dec 10, 2024, 5:00 PM" 
+        data-venue="Convention Center, Room 3" 
+        data-organizer="Charity Club" 
+        data-requirements="No special requirements" 
+        data-cost="Free Entry" 
+        onclick="openEventDetails(this)">
+        Charity Auction
+    </li>
+    <li class="event-item" 
+        data-title="Music Concert" 
+        data-description="Enjoy a live music concert with popular bands." 
+        data-schedule="Dec 12, 2024, 8:00 PM" 
+        data-venue="Outdoor Stage" 
+        data-organizer="Music Society" 
+        data-requirements="No special requirements" 
+        data-cost="1500" 
+        onclick="openEventDetails(this)">
+        Music Concert
+    </li>
+                <h3>Technical Events</h3>
+            </ul>
+        </main>
+    </div>
+
+    
+<!-- Event Details Modal -->
+<div id="eventDetailsModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="eventTitle">Event Title</h2>
+        <p id="eventDescription">Event description goes here...</p>
+        <p id="eventTime">Event date and time will be displayed here...</p>
+    </div>
+</div>
+    
+
+
+    <!-- Chatbot Section -->
+    <div id="chatbot" class="chatbot">
+        <div id="chat-window" class="chat-window">
+            <div id="messages" class="messages"></div>
+            <input id="userInput" type="text" placeholder="Ask about events, schedule, or registration...">
+            <button id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <!-- Chatbot Animation -->
+<div id="chatbotRobo" class="chatbot-robo">
+    <img src="robo.png" alt="Chatbot Robot" class="robo"> <!-- Replace with your robo image -->
+    <span id="assistText" class="assist-text">I am here to assist</span>
+</div>
+
+
+     <!-- JavaScript to handle UI behavior -->
+ <script src="app.js"></script>
+   
+</body>
+</html>

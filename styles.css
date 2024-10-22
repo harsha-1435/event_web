@@ -1,0 +1,286 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container and header styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.about-btn:hover {
+    background-color: #45a049;
+    cursor: pointer;
+}
+
+header {
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    width: 100px;
+}
+
+header h1 {
+    color: #333;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* Event list */
+ul.event-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+ul.event-list h3 {
+    color: #4caf50;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+ul.event-list li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+ul.event-list li:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 60%;
+    border-radius: 8px;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Chatbot styles */
+#chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#chat-window {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+}
+
+#messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+#userInput {
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+#sendBtn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#sendBtn:hover {
+    background-color: #45a049;
+}
+
+/* Event Details Styling */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    color: #4caf50;
+}
+
+main p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+footer a:hover {
+    background-color: #45a049;
+}
+
+/* Initial position of the robot */
+#chatbotRobo {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100px; /* Adjust size as needed */
+    z-index: 1000;
+    opacity: 0; /* Initially hidden */
+}
+
+.robo {
+    width: 70%;
+    height: auto;
+}
+
+/* Style for the assist text */
+.assist-text {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: none; /* Initially hidden */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Animation keyframes to move the robot from left to right */
+@keyframes moveRobo {
+    0% {
+        left: 0;
+        opacity: 1;
+    }
+    100% {
+        left: calc(100% - 100px); /* Stops at right edge minus robot width */
+    }
+}
+
+/* Show the assist text when robot reaches the end */
+.show-text {
+    display: block;
+    opacity: 1;
+    position: absolute;
+    bottom: 80px; /* Adjust this value as needed to place it near the robot's head */
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* Ensures the text stays in one line */
+    font-size: 12px;
+    color: gray; /* Change the text color if needed */
+    background: none; /* No background */
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* Set the background image */
+    background-image: url('background.jpg'); /* Replace with the correct path to your JPG file */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Make the background fixed during scrolling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100vh; /* Ensure the body takes the full height of the viewport */
+    width: 100%; /* Ensure the body takes the full width */
+}
+
+/* Other existing styles... */
+
+
+/* Other existing styles... */
+
